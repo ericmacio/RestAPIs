@@ -1,0 +1,13 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: user-service-db
+  datasource:
+    url: "jdbc:mysql://localhost:3306/udemy"
+    username: root
+    password: eric@2024
+  jpa:
+    show_sql: true
+    hibernate:
+      ddl-auto: update
