@@ -31,7 +31,7 @@ public class User {
 
     private final String city = "Grenoble";
 
-    private User() {
+    public User() {
     }
 
     public User(String firstName, String lastName, String email) {
@@ -63,5 +63,17 @@ public class User {
 
     public String getCity() {
         return city;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", updateDate=" + updateDate +
+                ", city='" + city + '\'' +
+                '}';
     }
 }

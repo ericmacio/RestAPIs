@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: "jdbc:mysql://localhost:3306/udemy"
+    username: root
+    password: eric@2024
+  jpa:
+    show_sql: true
+    hibernate:
+      ddl-auto: update
+sql:
+  script:
+    create:
+      user: insert into user(id, first_name, last_name, email) values (999, 'Bobby', 'Lemoulin', 'bobby.lemoulin@gmail.com')
+    delete:
+      user: delete from user

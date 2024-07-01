@@ -5,12 +5,9 @@ import com.eric.restapi.user_service.exceptions.NotFoundException;
 import com.eric.restapi.user_service.model.User;
 import com.eric.restapi.user_service.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.regex.Pattern;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -28,6 +25,13 @@ public class UserServiceImpl implements UserService {
         return userRepository.findUserById(id)
                 .orElseThrow(() -> new NotFoundException("User not found for id: " + id + ". Cannot get"));
     }
+
+    @Override
+    public User getUserByEmail(String email) {
+        return userRepository.findUserByEmail(email)
+                .orElseThrow(() -> new NotFoundException("User not found for email: " + email + ". Cannot get"));
+    }
+
 
     @Override
     public void deleteUser(Long id) {
